@@ -7,7 +7,7 @@ const Header = () => {
   return (
     <MainHeader>
       <NavLink to="/">
-        <img src="./images/logo.png" alt="my logo img" />
+        <img className="logo" src="./images/logo1.png" alt="my logo img" />
       </NavLink>
       <Nav />
     </MainHeader>
@@ -16,15 +16,16 @@ const Header = () => {
 
 const MainHeader = styled.header`
   padding: 0 4.8rem;
-  height: 10rem;
+  height: 8rem;
   background-color: ${({ theme }) => theme.colors.bg};
   display: flex;
   justify-content: space-between;
   align-items: center;
   position: relative;
+  box-shadow: 0px 10px 10px -15px #111;
 
   .logo {
-    height: 5rem;
+    height: 11rem;
   }
 `;
 export default Header;

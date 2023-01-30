@@ -8,14 +8,14 @@ const HeroSection = ({ myData }) => {
   return (
     <Wrapper>
       <div className="container">
-        <div className="grid grid-two-column">
+        <div className="subCon grid grid-two-column">
           <div className="hero-section-data">
-            <p className="intro-data">Welcome to </p>
-            <h1> {name} </h1>
+            <h3>Welcome to </h3>
+            <h1 className="intro-data"> E-Com Store </h1>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias
-              atque temporibus veniam doloribus libero ad error omnis voluptates
-              animi! Suscipit sapiente.
+            India's biggest online store for Mobiles, Fashion (Clothes/Shoes), Electronics, Home Appliances, Books, Home,
+             Furniture, Grocery, Jewelry, Sporting goods, Beauty & Personal Care and more!
+             Find the largest selection from all brands at the lowest prices in India.
             </p>
             <NavLink>
               <Button>show now</Button>
@@ -25,7 +25,7 @@ const HeroSection = ({ myData }) => {
           <div className="hero-section-image">
             <figure>
               <img
-                src="images/hero.jpg"
+                src="images/banner.jpg"
                 alt="hero-section-photo"
                 className="img-style"
               />
@@ -38,7 +38,13 @@ const HeroSection = ({ myData }) => {
 };
 
 const Wrapper = styled.section`
-  padding: 12rem 0;
+  padding: 8rem 0;
+  height: 90vh;
+  .subCon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
   img {
     min-width: 10rem;
@@ -50,7 +56,7 @@ const Wrapper = styled.section`
       margin: 2rem 0;
     }
 
-    h1 {
+    h1, h3 {
       text-transform: capitalize;
       font-weight: bold;
     }
@@ -61,24 +67,11 @@ const Wrapper = styled.section`
   }
 
   .hero-section-image {
-    width: 100%;
+    width: 120%;
     height: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
   }
   figure {
     position: relative;
-
-    &::after {
-      content: "";
-      width: 60%;
-      height: 80%;
-      background-color: rgba(81, 56, 238, 0.4);
-      position: absolute;
-      left: 50%;
-      top: -5rem;
-      z-index: -1;
     }
   }
   .img-style {
@@ -87,18 +80,12 @@ const Wrapper = styled.section`
   }
 
   @media (max-width: ${({ theme }) => theme.media.mobile}) {
-    .grid {
-      gap: 10rem;
-    }
-
-    figure::after {
-      content: "";
-      width: 50%;
-      height: 100%;
-      left: 0;
-      top: 10%;
-      /* bottom: 10%; */
-      background-color: rgba(81, 56, 238, 0.4);
+    
+    .subCon, .hero-section-data{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
     }
   }
 `;
