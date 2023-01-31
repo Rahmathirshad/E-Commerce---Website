@@ -2,8 +2,7 @@ import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import { Button } from "../styles/Button";
 
-const HeroSection = ({ myData }) => {
-  const { name } = myData;
+const HeroSection = ({about}) => {
 
   return (
     <Wrapper>
@@ -13,11 +12,12 @@ const HeroSection = ({ myData }) => {
             <h3>Welcome to </h3>
             <h1 className="intro-data"> E-Com Store </h1>
             <p>
-            India's biggest online store for Mobiles, Fashion (Clothes/Shoes), Electronics, Home Appliances, Books, Home,
-             Furniture, Grocery, Jewelry, Sporting goods, Beauty & Personal Care and more!
-             Find the largest selection from all brands at the lowest prices in India.
+              India's biggest online store for Mobiles, Fashion (Clothes/Shoes), Electronics, Home Appliances, Books, Home,
+              Furniture, Grocery, Jewelry, Sporting goods, Beauty & Personal Care and more!
+              Find the largest selection from all brands at the lowest prices in India.
             </p>
-            <NavLink>
+            <p>{about}</p>
+            <NavLink to="/products">
               <Button>show now</Button>
             </NavLink>
           </div>
@@ -38,9 +38,12 @@ const HeroSection = ({ myData }) => {
 };
 
 const Wrapper = styled.section`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 8rem 0;
   height: 90vh;
-  .subCon{
+  .subCon, .container{
     display: flex;
     justify-content: center;
     align-items: center;

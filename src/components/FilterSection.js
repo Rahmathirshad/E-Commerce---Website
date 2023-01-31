@@ -15,11 +15,12 @@ const FilterSection = () => {
   // get the unique values of each property
   const getUniqueData = (data, attr) => {
     let newVal = data.map((curElem) => {
+      console.log(curElem[attr]);
       return curElem[attr];
     });
 
     if (attr === "colors") {
-      // return (newVal = ["All", ...new Set([].concat(...newVal))]);
+      
       newVal = newVal.flat();
     }
 
@@ -30,13 +31,10 @@ const FilterSection = () => {
   const categoryData = getUniqueData(all_products, "category");
   const companyData = getUniqueData(all_products, "company");
   const colorsData = getUniqueData(all_products, "colors");
-  // console.log(
-  //   "🚀 ~ file: FilterSection.js ~ line 23 ~ FilterSection ~ companyData",
-  //   colorsData
-  // );
 
   return (
     <Wrapper>
+      {/* Product Search Box */}
       <div className="filter-search">
         <form onSubmit={(e) => e.preventDefault()}>
           <input
@@ -49,6 +47,7 @@ const FilterSection = () => {
         </form>
       </div>
 
+      {/* Filter Category */}
       <div className="filter-category">
         <h3>Category</h3>
         <div>
@@ -68,6 +67,7 @@ const FilterSection = () => {
         </div>
       </div>
 
+      {/* Filter Company */}
       <div className="filter-company">
         <h3>Company</h3>
 
